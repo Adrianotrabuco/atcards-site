@@ -107,10 +107,10 @@ nav a:hover {
         background-image: url('../imagens/banner-crachas.jpg'); 
     }
     33%, 63% { 
-        background-image: url('/imagens/banner-oficina.jpg'); 
+        background-image: url('../imagens/banner-oficina.jpg'); 
     }
     66%, 100% { 
-        background-image: url('/imagens/banner-cordoes.png'); 
+        background-image: url('../imagens/banner-oficina2.png'); 
     }
 
 }
