@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos | AT Cardw identificação</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="logo"><a href="index.html"><img src="imagens/logo.png" alt="AT Cards"></a></div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section style="background: #003366; color: white; padding: 60px 8%;">
+    <h1 style="font-size: 2.5rem;">Nossos Produtos</h1>
+    <p>Clique no produto para ver detalhes e solicitar orçamento.</p>
+</section>
+
+<section id="produtos">
+    <div class="grid">
+        <div class="card" data-title="Crachá PVC" data-desc="Impressão em alta definição, ideal para controle de acesso." data-img="imagens/crachas.png">
+            <div class="img-container"><img src="imagens/crachas.png" alt="Crachá"></div>
+            <h3>Crachá PVC</h3>
+        </div>
+        <div class="card" data-title="Cordão Sublimado" data-desc="Cordões acetinados personalizados sem limite de cores." data-img="imagens/cordao-personalizado.png">
+            <div class="img-container"><img src="imagens/cordao-personalizado.png" alt="Cordão"></div>
+            <h3>Cordão Sublimado</h3>
+        </div>
+        <div class="card" data-title="Acessorios" data-desc="Protetores rígidos ou flexíveis para crachás padrão." data-img="imagens/porta.png">
+            <div class="img-container"><img src="imagens/porta.png" alt="Acessorios"></div>
+            <h3>Acessórios</h3>
+        </div>
+        <div class="card" data-title="Credencial para Eventos" data-desc="Credenciais em tamanhos especiais para feiras e congressos." data-img="imagens/credencial.png">
+            <div class="img-container"><img src="imagens/credencial.png" alt="Credencial"></div>
+            <h3>Credencial para Eventos</h3>
+        </div>
+    </div>
+
+    <div class="produto-detalhe" id="produtoDetalhe">
+        <span class="close" id="fecharDetalhe">&times;</span>
+        <img id="detalheImg" src="" alt="Produto">
+        <h3 id="detalheTitulo" style="color:#003366; margin-bottom: 10px;"></h3>
+        <p id="detalheDesc" style="margin-bottom: 20px; color: #666;"></p>
+        <a id="detalheWhatsapp" href="" target="_blank" class="btn" style="width:100%; text-align:center;">Solicitar Orçamento</a>
+    </div>
+</section>
+
+<script>
+    const cards = document.querySelectorAll('.card');
+    const detalhe = document.getElementById('produtoDetalhe');
+    const fechar = document.getElementById('fecharDetalhe');
+
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            document.getElementById('detalheImg').src = card.dataset.img;
+            document.getElementById('detalheTitulo').textContent = card.dataset.title;
+            document.getElementById('detalheDesc').textContent = card.dataset.desc;
+            let t = `Olá! Gostaria de um orçamento para: ${card.dataset.title}`;
+            document.getElementById('detalheWhatsapp').href = `https://api.whatsapp.com/send?phone=5519992247044&text=${encodeURIComponent(t)}`;
+            detalhe.style.display = 'block';
+            setTimeout(() => detalhe.classList.add('show'), 10);
+        });
+    });
+
+    fechar.onclick = () => {
+        detalhe.classList.remove('show');
+        setTimeout(() => detalhe.style.display = 'none', 300);
+    };
+</script>
+</body>
+</html>

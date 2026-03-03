@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AT Cards identificação | Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="logo"><a href="index.html"><img src="imagens/logo.png" alt="AT Cards"></a></div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Soluções em Identificação Profissional</h1>
+        <p>Crachás PVC, Cordões Personalizados e Acessórios Corporativos com entrega rápida em Campinas e região.</p>
+        <a href="produtos.html" class="btn">Ver Catálogo Completo</a>
+        <br>
+        <br>
+        <p>🚀 Rapidez e Qualidade é com AT cards</p>
+    
+</div>
+    </div>
+</section>
+
+<section id="sobre">
+    <h2>Sobre Nós</h2>
+    <p>A <strong>AT Cards identificação</strong> é especialista em transformar a identidade da sua empresa em acessórios de alta qualidade. Unimos tecnologia e design para entregar o melhor em identificação.</p>
+</section>
+
+<section id="contato">
+    <h2>Solicite um Orçamento</h2>
+    <form id="formContato">
+        <input type="text" id="nome" placeholder="Seu Nome" required>
+        <input type="text" id="empresa" placeholder="Sua Empresa">
+        <textarea id="mensagem" placeholder="Quais produtos você precisa?" style="height: 120px; padding: 15px; border-radius: 12px; border: 2px solid #eee; font-family: inherit; resize: none;" required></textarea>
+        <button type="submit">Enviar via WhatsApp</button>
+    </form>
+</section>
+
+<footer>
+    <div style="margin-bottom: 15px;">
+        <p><strong>AT Cards identificação</strong></p>
+        <p>Endereço: Rua David Augusto Ferreira, 126 - Bairro: Pq das camelias - Campinas - SP</p>
+        <p>CEP: 13052-530</p>
+    </div>
+    <p>© 2026 AT Cards identificação - Todos os direitos reservados.</p>
+</footer>
+
+<a href="https://api.whatsapp.com/send?phone=5519992247044" class="whatsapp">WhatsApp</a>
+
+<script>
+    document.getElementById('formContato').onsubmit = function(e){
+        e.preventDefault();
+        let n = document.getElementById('nome').value;
+        let em = document.getElementById('empresa').value;
+        let m = document.getElementById('mensagem').value;
+        let t = `Olá! Sou ${n} da empresa ${em}. Pedido: ${m}`;
+        window.open(`https://api.whatsapp.com/send?phone=5519992247044&text=${encodeURIComponent(t)}`, '_blank');
+    };
+</script>
+</body>
+</html>
